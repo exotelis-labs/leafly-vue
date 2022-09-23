@@ -1,0 +1,92 @@
+{
+  "name": "@exotelis-labs/leafly-vue",
+  "version": "1.0.0",
+  "description": "Leafly-vue is a Design System by exotelis-labs which is used across different projects",
+  "license": "MIT",
+  "homepage": "https://github.com/exotelis-labs/leafly-vue#readme",
+  "author": {
+    "name": "Sebastian Krah",
+    "email": "exotelis@mailbox.org"
+  },
+  "scripts": {
+    "dev": "vite --port 5000",
+    "preview": "vite preview --port 4173",
+    "build": "run-s types:check build-only types:export",
+    "build-only": "vite build",
+    "test:unit": "vitest run",
+    "test:unit:coverage": "vitest run --coverage",
+    "test:unit:watch": "vitest watch",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
+    "lint:fix": "npm run lint -- --fix",
+    "types:check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
+    "types:export": "vue-tsc -p tsconfig.app.json --emitDeclarationOnly --composite false"
+  },
+  "files": [
+    "dist",
+    "CHANGELOG.md",
+    "tailwind.config.js"
+  ],
+  "main": "./dist/leafly-vue.umd.js",
+  "module": "./dist/leafly-vue.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/leafly-vue.es.js",
+      "require": "./dist/leafly-vue.umd.js"
+    },
+    "./package.json": "./package.json",
+    "./tailwind.config.js": "./tailwind.config.js"
+  },
+  "types": "./dist/public_api.d.ts",
+  "pre-commit": [
+    "lint",
+    "types:check",
+    "test:unit"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exotelis-labs/leafly-vue.git"
+  },
+  "keywords": [
+    "Design system",
+    "Exotelis labs",
+    "vue 3"
+  ],
+  "bugs": {
+    "url": "https://github.com/exotelis-labs/leafly-vue/issues"
+  },
+  "devDependencies": {
+    "@exotelis-labs/eslint-config-base": "^1.0.2",
+    "@exotelis-labs/tailwindcss-font-faces": "^2.0.1",
+    "@rushstack/eslint-patch": "^1.1.4",
+    "@types/jsdom": "^20.0.0",
+    "@types/node": "^16.11.56",
+    "@vitejs/plugin-vue": "^3.0.3",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vue/eslint-config-typescript": "^11.0.0",
+    "@vue/test-utils": "^2.0.2",
+    "@vue/tsconfig": "^0.1.3",
+    "@vueuse/core": "^9.2.0",
+    "autoprefixer": "^10.4.12",
+    "eslint": "^8.22.0",
+    "eslint-plugin-vue": "^9.3.0",
+    "jsdom": "^20.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.16",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.7.1",
+    "tailwindcss": "^3.1.8",
+    "typescript": "~4.7.4",
+    "vite": "^3.0.9",
+    "vitest": "^0.23.0",
+    "vue": "^3.2.38",
+    "vue-router": "^4.1.5",
+    "vue-tsc": "^0.40.7"
+  },
+  "peerDependencies": {
+    "@exotelis-labs/eslint-config-base": ">=1.0.2",
+    "@exotelis-labs/tailwindcss-font-faces": ">=1.0.1",
+    "@vueuse/core": ">=9.2.0",
+    "vue": ">=3.2.38",
+    "vue-router": ">=4.1.5"
+  }
+}
