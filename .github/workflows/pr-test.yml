@@ -1,0 +1,33 @@
+# This workflow will test pull requests
+
+name: "Test building and linting"
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: 'Build, lint & test'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+      - name: Install dependencies
+        working-directory: ./
+        run: npm ci
+      - name: Build
+        working-directory: ./
+        run: npm run build
+      - name: Lint
+        working-directory: ./
+        run: npm run lint
+      - name: Typecheck
+        working-directory: ./
+        run: npm run typecheck
+      - name: Unit
+        working-directory: ./
+        run: npm run test
