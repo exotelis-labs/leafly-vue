@@ -21,13 +21,13 @@ jobs:
         run: npm ci
       - name: Build
         working-directory: ./
-        run: npm run build
+        run: npm run build-only
       - name: Lint
         working-directory: ./
         run: npm run lint
       - name: Typecheck
         working-directory: ./
-        run: npm run typecheck
+        run: npm run types:check
       - name: Unit
         working-directory: ./
-        run: npm run test
+        run: npm run test:unit
