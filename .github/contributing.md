@@ -25,5 +25,6 @@ please make sure to take a moment and read through the following guidelines:
   - Provide a convincing reason why your improvement should be merged. Ideally, you should open a suggestion issue first and have it approved before working on it
   - The title of the pull request must start with the word `Improvement:` followed by meaningful title
 - It's OK to have multiple small commits as you work on the PR - GitHub can automatically squash them before merging
+- Add or update unit tests
 - Update the [changelog](https://github.com/exotelis-labs/leafly-vue/blob/develop/CHANGELOG.md) if necessary
 - Update the [documentation](https://github.com/exotelis-labs/leafly-vue/blob/develop/docs/) if necessary

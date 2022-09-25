@@ -9,4 +9,5 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Added
 - Build setup of leafly-vue
 - Minimal set of components
+- VitePress for documentation
 - GitHub workflows and templates
