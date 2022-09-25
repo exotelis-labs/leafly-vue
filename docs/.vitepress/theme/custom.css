@@ -1,0 +1,24 @@
+:root {
+    --vp-font-family-base: 'Inter var experimental', 'Inter var', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --vp-font-family-mono: 'Overpass Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --vp-c-bg: #f8f9fa;
+    --vp-c-bg-alt: #e9ecef;
+    --vp-custom-block-info-bg: var(--vp-c-bg-alt);
+    --vp-custom-block-info-text: var(--vp-c-text-1);
+}
+
+.dark {
+    --vp-c-bg: #343a40;
+    --vp-c-bg-alt: var(--vp-c-black);
+    --vp-custom-block-info-bg: var(--vp-c-black-mute);
+    --vp-custom-block-info-text: var(--vp-c-text-1);
+}
+
+.VPNavBar.has-sidebar .content {
+    background-color: var(--vp-c-bg) !important;
+}
+
+.vp-doc table {
+    width: 100%;
+    display: table;
+}

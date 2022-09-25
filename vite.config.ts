@@ -13,8 +13,10 @@ export default defineConfig({
       fileName: (format) => `leafly-vue.${format}.js`,
     },
     rollupOptions: {
-      external: ['@vueuse/core', 'vue', 'vue-router'],
+      // make sure to externalize deps that shouldn't be bundled into your library
+      external: [/*'@vueuse/core',*/ 'vue', 'vue-router'],
       output: {
+        // Provide global variables to use in the UMD build for externalized deps
         globals: {
           '@vueuse/core': 'VueUse',
           vue: 'Vue',

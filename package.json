@@ -1,7 +1,7 @@
 {
   "name": "@exotelis-labs/leafly-vue",
   "version": "1.0.0",
-  "description": "Leafly-vue is a Design System by exotelis-labs which is used across different projects",
+  "description": "Simple Design System and Component Library",
   "license": "MIT",
   "homepage": "https://github.com/exotelis-labs/leafly-vue#readme",
   "author": {
@@ -10,7 +10,6 @@
   },
   "scripts": {
     "dev": "vite --port 5000",
-    "preview": "vite preview --port 4173",
     "build": "run-s types:check build-only types:export",
     "build-only": "vite build",
     "test:unit": "vitest run",
@@ -19,7 +18,10 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
     "lint:fix": "npm run lint -- --fix",
     "types:check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
-    "types:export": "vue-tsc -p tsconfig.app.json --emitDeclarationOnly --composite false"
+    "types:export": "vue-tsc -p tsconfig.app.json --emitDeclarationOnly --composite false",
+    "docs:dev": "vitepress dev docs --port 5001",
+    "docs:serve": "vitepress serve docs --port 5002",
+    "docs:build": "vitepress build docs"
   },
   "files": [
     "dist",
@@ -61,6 +63,7 @@
     "@types/jsdom": "^20.0.0",
     "@types/node": "^16.11.56",
     "@vitejs/plugin-vue": "^3.0.3",
+    "@vitest/coverage-c8": "^0.23.4",
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^11.0.0",
     "@vue/test-utils": "^2.0.2",
@@ -77,6 +80,7 @@
     "tailwindcss": "^3.1.8",
     "typescript": "~4.7.4",
     "vite": "^3.0.9",
+    "vitepress": "^1.0.0-alpha.15",
     "vitest": "^0.23.0",
     "vue": "^3.2.38",
     "vue-router": "^4.1.5",
@@ -85,8 +89,8 @@
   "peerDependencies": {
     "@exotelis-labs/eslint-config-base": ">=1.0.2",
     "@exotelis-labs/tailwindcss-font-faces": ">=1.0.1",
-    "@vueuse/core": ">=9.2.0",
-    "vue": ">=3.2.38",
-    "vue-router": ">=4.1.5"
+    "autoprefixer": ">=10.4.12",
+    "postcss": ">=8.4.16",
+    "tailwindcss": ">=3.1.8"
   }
 }
